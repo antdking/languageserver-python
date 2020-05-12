@@ -36,7 +36,7 @@ lint:
 	autoflake --check --remove-unused-variables --recursive $(SRC_DIRS) $(TEST_DIRS)
 	isort --check-only --recursive $(SRC_DIRS) $(TEST_DIRS)
 	black --check $(SRC_DIRS) $(TEST_DIRS)
-	mypy
+	mypy $(SRC_DIRS)
 
 
 ##@ Helpers

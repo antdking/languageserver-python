@@ -33,6 +33,7 @@ dev = [
   "black",
   "isort",
   "mypy",
+  "flake8",
 ]
 
 [tool.isort]
