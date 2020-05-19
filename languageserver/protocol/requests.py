@@ -41,6 +41,8 @@ TODO = Any
 class Request(Generic[T_Params, T_Result]):
     method: ClassVar[str]
 
+    params: T_Params
+
 
 class Initialize(Request[InitializeParams, InitializeResult]):
     method = "initialize"

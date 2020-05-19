@@ -1,4 +1,4 @@
-from typing import Any, Generic, TypeVar
+from typing import Any, ClassVar, Generic, TypeVar
 
 from .params import (
     DidChangeConfigurationParams,
@@ -10,15 +10,15 @@ from .params import (
     ShowMessageParams,
     WorkDoneProgressCancelParams,
 )
-from .requests import Request
 
 T_Params = TypeVar("T_Params")
-T_Result = TypeVar("T_Result")
 TODO = Any
 
 
-class Notification(Generic[T_Params], Request[T_Params, None]):
-    pass
+class Notification(Generic[T_Params]):
+    method: ClassVar[str]
+
+    params: T_Params
 
 
 class Initialized(Notification[InitializedParams]):
